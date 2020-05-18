@@ -58,13 +58,17 @@ module.exports = {
   },
   plugins: [
     new SizePlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: '**/*',
-        context: 'source',
-        ignore: ['*.js', '*.ts', '*.scss'],
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: '**/*',
+          context: 'source',
+          globOptions: {
+            ignore: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.scss'],
+          },
+        },
+      ],
+    }),
   ],
   optimization: {
     minimizer: [
