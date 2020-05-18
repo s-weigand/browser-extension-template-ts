@@ -37,7 +37,7 @@
     "tslint-config-standard": "^9.0.0",
     "typescript": "^3.9.2",
     "web-ext": "^4.1.0",
-    "web-ext-submit": "^4.1.0",
+    "web-ext-submit": "^4.2.0",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   },
