@@ -18,7 +18,7 @@
     "@types/firefox-webext-browser": "^70.0.1",
     "@types/jest": "^25.2.3",
     "chrome-webstore-upload-cli": "^1.2.0",
-    "copy-webpack-plugin": "^6.0.0",
+    "copy-webpack-plugin": "^6.0.2",
     "daily-version": "^2.0.0",
     "dot-json": "^1.1.0",
     "file-loader": "^6.0.0",
