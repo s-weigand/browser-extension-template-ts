@@ -1,6 +1,9 @@
+# Copied from https://github.com/notlmn/browser-extension-template/blob/master/.github/workflows/deployment.yml
 name: Deployment
 
 on:
+  schedule:
+    - cron: '31 13 * * 3'
   push:
     tags:
       - '20.*'
@@ -10,20 +13,25 @@ on:
       - '24.*'
 
 jobs:
-  build:
+  Build:
+    outputs:
+      created: ${{ steps.daily-version.outputs.created }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run test:prod
+      - run: npm install
+      - run: npm test:prod # This includes the build
+      - uses: fregante/daily-version-action@v1
+        name: Create tag if necessary
+        id: daily-version
       - name: Update extension’s meta
+        env:
+          VER: ${{ steps.daily-version.outputs.version }}
         run: |
-          export VER=$(echo "$GITHUB_REF" | sed -e 's/refs\/tags\///')
           echo https://github.com/$GITHUB_REPOSITORY/tree/$VER > distribution/SOURCE_URL
           npm run version
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         with:
-          name: built-extension
           path: distribution
 
   deploy-to-chrome:
