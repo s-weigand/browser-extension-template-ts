@@ -27,7 +27,7 @@
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "sass": "^1.26.9",
-    "sass-loader": "^9.0.1",
+    "sass-loader": "^9.0.2",
     "size-plugin": "^2.0.1",
     "terser-webpack-plugin": "^3.0.6",
     "ts-jest": "^26.1.1",
