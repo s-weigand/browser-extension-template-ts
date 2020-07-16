@@ -3,14 +3,14 @@ name: Deployment
 
 on:
   schedule:
-    - cron: '31 13 * * 3'
+    - cron: "31 13 * * 3"
   push:
     tags:
-      - '20.*'
-      - '21.*'
-      - '22.*'
-      - '23.*'
-      - '24.*'
+      - "20.*"
+      - "21.*"
+      - "22.*"
+      - "23.*"
+      - "24.*"
 
 jobs:
   Build:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
-      - run: npm test:prod # This includes the build
+      - run: npm run test:prod # This includes the build
       - uses: fregante/daily-version-action@v1
         name: Create tag if necessary
         id: daily-version
