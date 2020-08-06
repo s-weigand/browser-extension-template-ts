@@ -60,6 +60,5 @@ jobs:
           path: distribution
       - run: cd distribution && npx web-ext-submit
         env:
-          WEB_EXT_ID: ${{ secrets.WEB_EXT_ID }}
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
