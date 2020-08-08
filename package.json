@@ -5,18 +5,17 @@
     "test": "jest --coverage",
     "test:prod": "run-s test lint build",
     "clean": "rimraf distribution",
-    "create_tag": "npx git tag $(daily-version)",
-    "build": "npm run clean && webpack --mode=production",
+    "build": "run-s clean && webpack --mode=production",
     "watch": "webpack --mode=development --watch",
     "version": "dot-json distribution/manifest.json version $VER",
-    "release:cws": "webstore upload --source=distribution --auto-publish",
-    "release:amo": "web-ext-submit --source-dir distribution",
-    "release": "VER=$(daily-version) run-s build version release:*"
+    "release": "VER=$(daily-version); git tag -a \"$VER\" -m \"Release version $VER\"",
+    "update_manifest_firefox": "npx ts-node tools/firefox_manifest_append.ts"
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "^0.7.0",
     "@types/firefox-webext-browser": "^78.0.1",
     "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
     "chrome-webstore-upload-cli": "^1.2.0",
     "copy-webpack-plugin": "^6.0.3",
     "daily-version": "^2.0.0",

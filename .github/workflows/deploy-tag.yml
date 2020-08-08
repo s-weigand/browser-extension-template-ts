@@ -30,18 +30,28 @@ jobs:
         run: |
           echo https://github.com/$GITHUB_REPOSITORY/tree/$VER > distribution/SOURCE_URL
           npm run version
-      - uses: actions/upload-artifact@v2
+      - name: Upload chrome build artifact
+        uses: actions/upload-artifact@v2
         with:
-          name: built-extension
+          name: built-extension-chrome
+          path: distribution
+
+      - name: update Manifest for FireFox
+        run: npm run update_manifest_firefox
+
+      - name: Upload firefox build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: built-extension-firefox
           path: distribution
 
   deploy-to-chrome:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v2
         with:
-          name: built-extension
+          name: built-extension-chrome
           path: distribution
       - run: cd distribution && npx chrome-webstore-upload-cli upload --auto-publish
         env:
@@ -54,12 +64,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v2
         with:
-          name: built-extension
+          name: built-extension-firefox
           path: distribution
       - run: cd distribution && npx web-ext-submit
         env:
-          WEB_EXT_ID: ${{ secrets.WEB_EXT_ID }}
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
