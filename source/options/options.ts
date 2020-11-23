@@ -15,15 +15,18 @@ const numberInputs = [
 const output = document.querySelector('.color-output') as HTMLElement
 
 function updateColor() {
+  // @ts-ignore: Object is possibly 'undefined'.
   output.style.backgroundColor = `rgb(${rangeInputs[0].value}, ${rangeInputs[1].value}, ${rangeInputs[2].value})`
 }
 
 function updateNumberInputField(event: Event): void {
+  // @ts-ignore: Object is possibly 'undefined'.
   numberInputs[
     rangeInputs.indexOf(event.currentTarget as HTMLInputElement)
   ].value = (event.currentTarget as HTMLInputElement).value
 }
 function updateRangeInputField(event: Event): void {
+  // @ts-ignore: Object is possibly 'undefined'.
   rangeInputs[
     numberInputs.indexOf(event.currentTarget as HTMLInputElement)
   ].value = (event.currentTarget as HTMLInputElement).value
