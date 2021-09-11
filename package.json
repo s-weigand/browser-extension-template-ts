@@ -37,7 +37,7 @@
     "typescript": "^4.4.2",
     "web-ext": "^6.3.0",
     "web-ext-submit": "^6.3.0",
-    "webpack": "^5.52.0",
+    "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
