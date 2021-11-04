@@ -38,7 +38,7 @@
     "web-ext": "^6.4.0",
     "web-ext-submit": "^6.5.0",
     "webpack": "^5.61.0",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.9.1"
   },
   "dependencies": {
     "webext-options-sync": "^3.0.0",
