@@ -15,7 +15,7 @@
     "@sindresorhus/tsconfig": "^2.0.0",
     "@types/firefox-webext-browser": "^94.0.0",
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.11.6",
     "chrome-webstore-upload-cli": "^2.0.1",
     "copy-webpack-plugin": "^9.0.1",
     "daily-version": "^2.0.0",
