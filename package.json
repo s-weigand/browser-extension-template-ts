@@ -35,7 +35,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^5.1.6",
-    "web-ext": "7.6",
+    "web-ext": "7.7",
     "web-ext-submit": "7.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
