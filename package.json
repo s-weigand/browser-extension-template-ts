@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "^4.0.0",
-    "@types/firefox-webext-browser": "^111.0.1",
+    "@types/firefox-webext-browser": "^111.0.2",
     "@types/jest": "^28.1.7",
     "@types/node": "^16.18.14",
     "chrome-webstore-upload-cli": "^2.2.2",
