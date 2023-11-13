@@ -12,7 +12,7 @@
     "update_manifest_firefox": "npx ts-node tools/firefox_manifest_append.ts"
   },
   "devDependencies": {
-    "@sindresorhus/tsconfig": "^4.0.0",
+    "@sindresorhus/tsconfig": "^5.0.0",
     "@types/firefox-webext-browser": "^111.0.1",
     "@types/jest": "^28.1.7",
     "@types/node": "^20.8.10",
