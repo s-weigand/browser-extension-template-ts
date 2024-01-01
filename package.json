@@ -28,7 +28,7 @@
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "size-plugin": "^3.0.0",
-    "terser-webpack-plugin": "^5.3.9",
+    "terser-webpack-plugin": "^5.3.10",
     "ts-jest": "^28.0.8",
     "ts-loader": "^9.5.1",
     "tslint": "^6.1.3",
